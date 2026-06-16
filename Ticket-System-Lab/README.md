@@ -1,37 +1,60 @@
-# 🏢 Enterprise Active Directory Home Lab
+<div align="center">
+  <img src="https://capsule-render.vercel.app/api?type=cylinder&color=auto&height=150&section=header&text=Ticket%20System%20Lab&fontSize=45&animation=fadeIn" width="100%"/>
+  
+  <p><em>"Turning chaos into structured resolutions."</em></p>
 
-## 🎯 Overview
-This project focuses on the deployment of a simulated corporate network environment using Windows Server 2022. The primary objective was to establish a functional Domain Controller and practice essential Identity and Access Management (IAM) tasks, including user lifecycle management, group policy implementation, and network service administration.
+  <p>
+    <img src="https://img.shields.io/badge/Service_Desk-ITSM-FF7D00?style=flat&logo=reverbnation&logoColor=white">
+    <img src="https://img.shields.io/badge/Troubleshooting-Root_Cause_Analysis-CC0000?style=flat&logo=search&logoColor=white">
+    <img src="https://img.shields.io/badge/Workflow-Automation-4CAF50?style=flat&logo=clickup&logoColor=white">
+  </p>
+</div>
 
-## 🚀 Objectives
-* **Domain Infrastructure:** Provision a Domain Controller (DC) and promote a server to serve as the forest root.
-* **Identity Management:** Create and manage Organizational Units (OUs), user accounts, and security groups.
-* **Security Enforcement:** Implement Group Policy Objects (GPOs) to enforce password policies and desktop restrictions.
-* **Network Services:** Configure core services (DNS/DHCP) to ensure internal network connectivity and resource resolution.
+---
 
-## 🛠️ Environment & Tools
-* **Host OS:** Windows 10/11
-* **Virtualization:** Oracle VirtualBox
-* **Server OS:** Windows Server 2022 Evaluation
-* **Client OS:** Windows 10 Pro
-* **Services:** AD DS, DNS, DHCP, GPO
+## 🎯 Project Overview
+This project focuses on simulating a real-world **IT Service Management (ITSM)** workflow. By deploying a ticketing system, I aimed to practice end-to-end incident lifecycle management—from initial user report to Root Cause Analysis (RCA) and final resolution. This lab bridges the gap between technical infrastructure skills and the "soft" skill of professional user support.
 
-## 🏗️ Implementation Steps
-1. **Virtual Network Setup:** Configured an Internal Network in VirtualBox to isolate the lab environment from the host's main network.
-2. **Server Promotion:** Installed AD DS roles and promoted the server to a Domain Controller.
-3. **User Provisioning:** Structured the Active Directory database into logical OUs (e.g., HR, IT, Finance) and populated them with test accounts.
-4. **Policy Deployment:** Configured GPOs to manage account security, such as lockout thresholds and complex password requirements.
+## 🚀 Key Objectives
+*   **Workflow Simulation:** Manage the full lifecycle of an IT ticket (Open, In-Progress, Pending, Resolved).
+*   **Incident Response:** Handle common corporate IT scenarios (VPN connectivity, Outlook sync errors, printer issues).
+*   **Documentation:** Maintain professional records of incidents to build a knowledge base (KB).
+*   **Root Cause Analysis (RCA):** Identify underlying issues instead of applying temporary "band-aid" fixes.
 
-## 🔍 Troubleshooting & Insights
-* **Issue:** Client machines were unable to join the domain due to DNS resolution failures.
-* **Resolution:** Verified that the client’s primary DNS was pointing to the static IP address of the Domain Controller. Adjusted firewall settings to allow necessary traffic on ports 53 (DNS) and 389 (LDAP).
-* **Key Learning:** Understanding the critical dependency of Active Directory on a stable DNS infrastructure is fundamental for any IT Support Specialist.
+---
 
-## 🖼️ Architecture & Documentation
-*(Insert your diagrams or screenshots here)*
-* [Diagram - Network Topology.png]
-* [Screenshot - Active Directory Users and Computers.png]
-* [Screenshot - Group Policy Management Console.png]
+## 🏗️ Implementation Highlights
+1.  **Environment Setup:** Deployed a ticketing platform in a controlled virtual environment.
+2.  **Scenario Creation:** Developed a catalog of "typical" user issues based on common Help Desk ticket trends.
+3.  **Documentation Standard:** Adopted a structured reporting format to ensure consistency and accountability in all resolutions.
 
-## 📌 References
-* [Microsoft Learn: Active Directory Domain Services Overview](https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/get-started/ad-ds-concepts)
+---
+
+## 🔍 Incident Log & Troubleshooting
+| Incident Type | Symptoms | Resolution |
+| :--- | :--- | :--- |
+| **Network** | VPN authentication timeout | Re-configured firewall rule and verified certificate status. |
+| **Email** | Outlook disconnected from server | Cleared local cache and verified DNS SRV records in AD. |
+| **Hardware** | Network printer "Offline" | Updated print server spooler and refreshed IP reservation in DHCP. |
+
+> **Pro-Tip:** The goal of an IT Support Specialist is to minimize downtime. Every incident resolved is an opportunity to improve the knowledge base and prevent future occurrences.
+
+---
+
+## 🖼️ Workflow Documentation
+*(Replace these links with your actual image paths)*
+![Ticket Dashboard](images/dashboard_view.png)
+![Sample Incident](images/incident_report.png)
+
+---
+
+## 📌 Technical References
+* [ITIL Foundation: Incident Management Best Practices](https://www.axelos.com/certifications/itil-certifications)
+* [CompTIA A+ Troubleshooting Methodology](https://www.comptia.org)
+
+---
+
+<div align="center">
+  <p>Building efficiency in IT service delivery.</p>
+  <a href="https://github.com/ChrisFrank23/IT-Projects">← Back to Main Portfolio</a>
+</div>
