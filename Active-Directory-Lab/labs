@@ -1,36 +1,99 @@
+<div align="center">
+
 # 🛠️ Technical Incident & Troubleshooting Log
 
-This log documents real technical challenges encountered during the implementation of the enterprise lab, the diagnostic methodology used, and the root cause resolutions.
+*Documenting real challenges encountered during enterprise lab implementation — diagnostic methodology, root cause analysis, and resolutions.*
+
+</div>
 
 ---
 
-### 🛑 Incident 01: Netplan Configuration Failure (Linux Gateway/Server)
-* **Symptom:** The network configuration failed to apply/install when executing `netplan apply`.
-* **Root Cause Analysis (RCA):** A duplicate configuration file existed within the `/etc/netplan/` directory. Netplan was reading conflicting directives from both files, causing the generation phase to fail.
-* **Resolution:** Cleaned the directory by auditing the `.yaml` files, backing up the redundant configurations, and deleting the duplicate file. Once only the primary, modified file remained, the configuration applied successfully.
-* **Key Insight:** In Linux network administration, configuration management hygiene is vital. Always ensure stale or duplicate configuration templates are purged from production directories to prevent syntax conflicts.
+## 📋 Incident Index
+
+| # | Incident | Status |
+|---|----------|--------|
+| [01](#-incident-01-netplan-configuration-failure) | Netplan Configuration Failure (Linux Gateway) | ✅ Resolved |
+| [02](#-incident-02-active-directory-domain-join-failure) | Active Directory Domain Join Failure (RPC / DNS) | ✅ Resolved |
+| [03](#-incident-03-crowbar-execution-failure) | Crowbar Execution Failure during Brute-Force Simulation | ✅ Resolved |
+| [04](#-incident-04-atomic-red-team-installation-syntax-error) | Atomic Red Team Installation Syntax Error | ✅ Resolved |
 
 ---
 
-### 🛑 Incident 02: Active Directory Domain Join Failure (RPC / DNS Error)
-* **Symptom:** When attempting to join the Windows client machine to the domain, the system threw the error: `"An Active Directory Domain Controller for the domain.local could not be contacted."`
-* **Root Cause Analysis (RCA):** The client machine and the Windows Server Domain Controller (DC) were isolated on different network segments, preventing them from establishing a handshake. Additionally, the client was not querying the DC for DNS resolution.
-* **Resolution:** 
-  1. Configured the Hypervisor network adapters to place both VMs on an isolated private network, enabling exclusive communication between them.
-  2. Verified and manually adjusted the client's TCP/IPv4 properties to point its Primary DNS server directly to the static IP address of the Domain Controller.
-* **Key Insight:** Active Directory is entirely dependent on DNS. A client machine cannot discover domain services if its DNS queries are not explicitly routed to the DC.
+## 🛑 Incident 01: Netplan Configuration Failure
+
+> **Environment:** Linux Gateway / Server · **Category:** Network Administration
+
+```
+SYMPTOM: netplan apply → FAILED
+```
+
+<table>
+<tr><td><b>🔍 Symptom</b></td><td>Network configuration failed to apply when executing <code>netplan apply</code></td></tr>
+<tr><td><b>🧪 Root Cause</b></td><td>Duplicate <code>.yaml</code> file found in <code>/etc/netplan/</code> — Netplan was reading conflicting directives from both files, causing the generation phase to fail</td></tr>
+<tr><td><b>🔧 Resolution</b></td><td>Audited the <code>/etc/netplan/</code> directory, backed up the redundant config, deleted the duplicate file. Configuration applied successfully once only the primary file remained</td></tr>
+</table>
+
+> 💡 **Key Insight:** Configuration management hygiene in Linux is critical. Always purge stale or duplicate templates from production directories to prevent directive conflicts.
 
 ---
 
-### 🛑 Incident 03: Crowbar Execution Failure during Brute-Force Simulation
-* **Symptom:** Attempting to execute a dictionary/brute-force attack against the Active Directory user account `Chris Frank` using the tool **Crowbar** in Kali Linux resulted in execution errors and tool instability.
-* **Resolution:** Switched to **Hydra**, a highly stable and robust parallelized login hacker tool. Configured Hydra to target the protocol service using the specified target username and password list, successfully identifying the correct credentials (`Cris&230207`) and validating the brute-force attack vector.
-* **Key Insight:** Cyber defense requires adaptability. If an offensive tool fails due to dependencies or version instabilities, an operator must quickly pivot to alternative industry-standard frameworks like Hydra to validate system vulnerabilities.
+## 🛑 Incident 02: Active Directory Domain Join Failure
+
+> **Environment:** Windows Server 2022 + Windows Client · **Category:** Active Directory / DNS
+
+```
+ERROR: "An Active Directory Domain Controller for the domain.local could not be contacted."
+```
+
+<table>
+<tr><td><b>🔍 Symptom</b></td><td>Windows client failed to join the domain — DC could not be contacted</td></tr>
+<tr><td><b>🧪 Root Cause</b></td><td>Client and DC were isolated on different network segments with no shared communication path. Client DNS was not pointing to the DC</td></tr>
+<tr><td><b>🔧 Resolution</b></td><td>
+  <b>Step 1:</b> Reconfigured Hypervisor network adapters to place both VMs on an isolated private network<br/>
+  <b>Step 2:</b> Manually set the client's Primary DNS (TCP/IPv4) to point directly to the DC's static IP
+</td></tr>
+</table>
+
+> 💡 **Key Insight:** Active Directory is entirely DNS-dependent. A client cannot discover domain services unless its DNS queries are explicitly routed to the Domain Controller.
 
 ---
 
-### 🛑 Incident 04: Atomic Red Team Installation Syntax Error
-* **Symptom:** The automated installation script for Atomic Red Team failed in the PowerShell prompt, throwing a connection/resource error.
-* **Root Cause Analysis (RCA):** A typographical error/divergence in the download URL string within the PowerShell command prompt.
-* **Resolution:** Carefully audited the execution script syntax against the official framework documentation, corrected the URL string parameters, and successfully initiated the framework installation.
-* **Key Insight:** Attention to detail in command-line syntax is paramount. Minor character discrepancies can break automated deployment scripts, making precise code auditing a fundamental IT support skill.
+## 🛑 Incident 03: Crowbar Execution Failure
+
+> **Environment:** Kali Linux · **Category:** Offensive Security / Red Team
+
+```
+SYMPTOM: Crowbar → Execution errors + tool instability during brute-force simulation
+```
+
+<table>
+<tr><td><b>🔍 Symptom</b></td><td>Dictionary/brute-force attack against AD user <code>Chris Frank</code> using Crowbar resulted in repeated execution errors and tool instability</td></tr>
+<tr><td><b>🧪 Root Cause</b></td><td>Tool dependency issues and version instability in the Crowbar framework</td></tr>
+<tr><td><b>🔧 Resolution</b></td><td>Pivoted to <b>Hydra</b> — configured to target the service protocol with the specified username and wordlist. Successfully identified credentials (<code>Cris&230207</code>) and validated the brute-force attack vector</td></tr>
+</table>
+
+> 💡 **Key Insight:** Cyber defense requires adaptability. When an offensive tool fails, an operator must quickly pivot to alternative industry-standard frameworks to validate vulnerabilities without losing momentum.
+
+---
+
+## 🛑 Incident 04: Atomic Red Team Installation Syntax Error
+
+> **Environment:** Windows PowerShell · **Category:** Security Framework Deployment
+
+```
+SYMPTOM: Atomic Red Team install script → Connection/resource error on execution
+```
+
+<table>
+<tr><td><b>🔍 Symptom</b></td><td>Automated installation script for Atomic Red Team failed in PowerShell with a connection/resource error</td></tr>
+<tr><td><b>🧪 Root Cause</b></td><td>Typographical error in the download URL string within the PowerShell command</td></tr>
+<tr><td><b>🔧 Resolution</b></td><td>Audited the script syntax against official framework documentation, corrected the URL string parameters, and successfully completed the framework installation</td></tr>
+</table>
+
+> 💡 **Key Insight:** Attention to detail in CLI syntax is paramount. Minor character discrepancies can break entire deployment scripts — precise code auditing is a fundamental IT skill.
+
+---
+
+<div align="center">
+  <sub>📁 Part of <a href="https://github.com/ChrisFrank23">Cristhofer Frank's</a> Enterprise Home Lab Documentation</sub>
+</div>
