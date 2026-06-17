@@ -73,29 +73,30 @@
 
 
 
-#### 📸 Trying to use crowbar to simulate a Brute Force Attack
+#### 📸 Lab Evidence (Brute-Force Execution)
+
+**Initial attempt using the Crowbar tool:**
+The terminal capture below logs the environment instability and execution errors encountered when attempting to leverage Crowbar against the Active Directory authentication service:
 
 <img width="1662" height="959" alt="Captura de tela 2026-06-17 100846" src="https://github.com/user-attachments/assets/b417e392-1db7-42d8-83bc-003723d6cc7c" />
 
 
 
-#### 📸 Configuring Windows Server
+#### 📸 Tactical pivot and successful exploitation with Hydra
 
-> Duplicate file conflict identified in the Netplan directory during root cause analysis:
+After identifying the limitations of the previous framework, the methodology was shifted to Hydra. The following screenshot captures the successful parallelized attack, accurately isolating and extracting the active credentials for the target domain user:
 
-![Netplan Duplicate Files Conflict]<img width="1705" height="955" alt="2" src="https://github.com/user-attachments/assets/0d865fff-48df-4b7d-86b8-9d7c5d2c31dc" />
-*📁 Fig. 1 — `/etc/netplan/` directory showing redundant configuration files before cleanup.*
+<img width="1273" height="962" alt="Captura de tela 2026-06-15 102021" src="https://github.com/user-attachments/assets/2ebac9d1-9db5-4ada-9300-9312be30c05f" />
 
-#### 📸 Configuring Windows Server
 
-> Duplicate file conflict identified in the Netplan directory during root cause analysis:
 
-![Netplan Duplicate Files Conflict]<img width="1705" height="955" alt="2" src="https://github.com/user-attachments/assets/0d865fff-48df-4b7d-86b8-9d7c5d2c31dc" />
-*📁 Fig. 1 — `/etc/netplan/` directory showing redundant configuration files before cleanup.*
+#### 📸 Success in doing a Brute Force Attack with Hydra tool
 
-#### 📸 Configuring Windows Server
+<img width="1548" height="982" alt="Captura de tela 2026-06-17 100900" src="https://github.com/user-attachments/assets/6e24a1bd-f664-4f83-b44d-8f3d2bd36bfa" />
 
-> Duplicate file conflict identified in the Netplan directory during root cause analysis:
 
-![Netplan Duplicate Files Conflict]<img width="1705" height="955" alt="2" src="https://github.com/user-attachments/assets/0d865fff-48df-4b7d-86b8-9d7c5d2c31dc" />
-*📁 Fig. 1 — `/etc/netplan/` directory showing redundant configuration files before cleanup.*
+
+#### 📸 Installing ART for future tests
+
+<img width="1678" height="957" alt="Captura de tela 2026-06-17 101047" src="https://github.com/user-attachments/assets/93c90b33-2761-4e2c-ae2c-6e82192447c2" />
+
