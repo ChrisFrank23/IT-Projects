@@ -25,11 +25,11 @@
 
 <img width="1739" height="970" alt="Captura de tela 2026-06-17 095311" src="https://github.com/user-attachments/assets/31965420-51a1-4212-9998-4727ff1a061a" />
 
-#### 📸 Configuring Windows Server
+#### 📸 Network Configuration Audit
 
 > Duplicate file conflict identified in the Netplan directory during root cause analysis:
 
-![Netplan Duplicate Files Conflict]<img width="1705" height="955" alt="2" src="https://github.com/user-attachments/assets/0d865fff-48df-4b7d-86b8-9d7c5d2c31dc" />
+![Netplan Duplicate Files Conflict](../images/netplan_error.png)
 *📁 Fig. 1 — `/etc/netplan/` directory showing redundant configuration files before cleanup.*
 
 #### 📸 Configuring Windows Server
