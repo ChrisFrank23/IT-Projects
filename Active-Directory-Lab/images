@@ -1,1 +1,6 @@
+#### 📸 Network Configuration Audit
 
+> Duplicate file conflict identified in the Netplan directory during root cause analysis:
+
+![Netplan Duplicate Files Conflict](../images/netplan_error.png)
+*📁 Fig. 1 — `/etc/netplan/` directory showing redundant configuration files before cleanup.*
