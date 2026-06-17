@@ -41,7 +41,7 @@ This project simulates an **Enterprise Domain Environment**. By deploying a full
 ---
 
 ## 🖼️ Architectural View
-<img width="509" height="713" alt="ActiveDirectoryServerDiagram" src="https://github.com/user-attachments/assets/6ad4e8de-e1cd-4331-8245-3023b3dff5e2" />
+  <img width="509" height="713" alt="ActiveDirectoryServerDiagram" src="https://github.com/user-attachments/assets/6ad4e8de-e1cd-4331-8245-3023b3dff5e2" />
 
 
 ---
