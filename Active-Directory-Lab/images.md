@@ -29,7 +29,7 @@
 
 > Duplicate file conflict identified in the Netplan directory during root cause analysis:
 
-![Netplan Duplicate Files Conflict](../images/netplan_error.png)
+![Netplan Duplicate Files Conflict]<img width="1735" height="966" alt="Captura de tela 2026-06-17 095404" src="https://github.com/user-attachments/assets/2867dc20-977e-42bd-a009-3423c600b56a" />
 *📁 Fig. 1 — `/etc/netplan/` directory showing redundant configuration files before cleanup.*
 
 #### 📸 Configuring Windows Server
