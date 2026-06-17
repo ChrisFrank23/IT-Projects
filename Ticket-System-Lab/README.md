@@ -34,17 +34,12 @@ This project focuses on simulating a real-world **IT Service Management (ITSM)**
 | Incident Type | Symptoms | Resolution |
 | :--- | :--- | :--- |
 | **Network** | VPN authentication timeout | Re-configured firewall rule and verified certificate status. |
-| **Email** | Outlook disconnected from server | Cleared local cache and verified DNS SRV records in AD. |
-| **Hardware** | Network printer "Offline" | Updated print server spooler and refreshed IP reservation in DHCP. |
 
 > **Pro-Tip:** The goal of an IT Support Specialist is to minimize downtime. Every incident resolved is an opportunity to improve the knowledge base and prevent future occurrences.
 
 ---
 
 ## 🖼️ Workflow Documentation
-*(Replace these links with your actual image paths)*
-![Ticket Dashboard](images/dashboard_view.png)
-![Sample Incident](images/incident_report.png)
 
 ---
 
