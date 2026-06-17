@@ -1,1 +1,36 @@
+# 🛠️ Technical Incident & Troubleshooting Log
 
+This log documents real technical challenges encountered during the implementation of the enterprise lab, the diagnostic methodology used, and the root cause resolutions.
+
+---
+
+### 🛑 Incident 01: Netplan Configuration Failure (Linux Gateway/Server)
+* **Symptom:** The network configuration failed to apply/install when executing `netplan apply`.
+* **Root Cause Analysis (RCA):** A duplicate configuration file existed within the `/etc/netplan/` directory. Netplan was reading conflicting directives from both files, causing the generation phase to fail.
+* **Resolution:** Cleaned the directory by auditing the `.yaml` files, backing up the redundant configurations, and deleting the duplicate file. Once only the primary, modified file remained, the configuration applied successfully.
+* **Key Insight:** In Linux network administration, configuration management hygiene is vital. Always ensure stale or duplicate configuration templates are purged from production directories to prevent syntax conflicts.
+
+---
+
+### 🛑 Incident 02: Active Directory Domain Join Failure (RPC / DNS Error)
+* **Symptom:** When attempting to join the Windows client machine to the domain, the system threw the error: `"An Active Directory Domain Controller for the domain.local could not be contacted."`
+* **Root Cause Analysis (RCA):** The client machine and the Windows Server Domain Controller (DC) were isolated on different network segments, preventing them from establishing a handshake. Additionally, the client was not querying the DC for DNS resolution.
+* **Resolution:** 
+  1. Configured the Hypervisor network adapters to place both VMs on an isolated private network, enabling exclusive communication between them.
+  2. Verified and manually adjusted the client's TCP/IPv4 properties to point its Primary DNS server directly to the static IP address of the Domain Controller.
+* **Key Insight:** Active Directory is entirely dependent on DNS. A client machine cannot discover domain services if its DNS queries are not explicitly routed to the DC.
+
+---
+
+### 🛑 Incident 03: Crowbar Execution Failure during Brute-Force Simulation
+* **Symptom:** Attempting to execute a dictionary/brute-force attack against the Active Directory user account `Chris Frank` using the tool **Crowbar** in Kali Linux resulted in execution errors and tool instability.
+* **Resolution:** Switched to **Hydra**, a highly stable and robust parallelized login hacker tool. Configured Hydra to target the protocol service using the specified target username and password list, successfully identifying the correct credentials (`Cris&230207`) and validating the brute-force attack vector.
+* **Key Insight:** Cyber defense requires adaptability. If an offensive tool fails due to dependencies or version instabilities, an operator must quickly pivot to alternative industry-standard frameworks like Hydra to validate system vulnerabilities.
+
+---
+
+### 🛑 Incident 04: Atomic Red Team Installation Syntax Error
+* **Symptom:** The automated installation script for Atomic Red Team failed in the PowerShell prompt, throwing a connection/resource error.
+* **Root Cause Analysis (RCA):** A typographical error/divergence in the download URL string within the PowerShell command prompt.
+* **Resolution:** Carefully audited the execution script syntax against the official framework documentation, corrected the URL string parameters, and successfully initiated the framework installation.
+* **Key Insight:** Attention to detail in command-line syntax is paramount. Minor character discrepancies can break automated deployment scripts, making precise code auditing a fundamental IT support skill.
