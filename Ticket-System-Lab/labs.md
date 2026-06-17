@@ -48,7 +48,7 @@ ERROR: "Connection Refused"
 
 ## 📸 Lab Evidence — Infrastructure Validation
 
-> Docker Engine Status Log after migrating to the corrected image:
+> Docker Engine Status Log before migrating to the corrected image:
 
 <img width="1267" height="717" alt="Captura de tela 2026-06-14 220551" src="https://github.com/user-attachments/assets/1f098c71-a5c1-465f-85cf-7f1d6ce27c47" />
 
