@@ -12,39 +12,46 @@
 
 | # | Incident | Status |
 |---|----------|--------|
-| [01](#-incident-01-docker-port-allocation--binding-conflict) | Docker Port Allocation / Binding Conflict | ✅ Resolved |
+| [01](#-incident-01-persistent-connection-refused-error--docker-image-instability) | Persistent Connection Refused Error & Docker Image Instability | ✅ Resolved |
 
 ---
 
-## 🛑 Incident 01: Docker Port Allocation / Binding Conflict
+## 🛑 Incident 01: Persistent Connection Refused Error & Docker Image Instability
 
-> **Environment:** Windows Host · Docker · osTicket · **Category:** Containerization / Network
+> **Environment:** Windows Host · Docker Desktop · osTicket · **Category:** Containerization / Image Management
 
 ```
-ERROR: "bkmts: port is already allocated" | "address already in use"
-→ osTicket web interface failed to launch on Port 80
+ERROR: "Connection Refused"
+→ osTicket web interface completely inaccessible despite containers appearing to run
 ```
 
 <table>
-<tr><td><b>🔍 Symptom</b></td><td>Container deployment halted with a bind error — Docker could not claim Port 80, preventing the osTicket web interface from launching</td></tr>
-<tr><td><b>🧪 Root Cause</b></td><td>The Windows host was already occupying Port 80 via a resident system service (World Wide Web Publishing Service / IIS or a local dev server). Since two distinct processes cannot share the same host port simultaneously, Docker's binding attempt was rejected</td></tr>
-<tr><td><b>🔧 Resolution</b></td><td>
-  <b>Step 1:</b> Audited the <code>docker-compose.yml</code> port mapping configuration<br/>
-  <b>Step 2:</b> Remapped host port <code>8080</code> → container internal port <code>80</code><br/>
-  <b>Step 3:</b> Re-ran deployment — database connectivity initialized and platform came online successfully
-</td></tr>
+<tr><td><b>🔍 Symptom</b></td><td>Browser continuously returned <i>Connection Refused</i> when attempting to reach the osTicket web interface — containers appeared active but the application was unreachable</td></tr>
+<tr><td><b>🧪 Root Cause</b></td><td>The Docker base image in use was inherently unstable, causing quiet crashes of critical internal services. Discovered via live log audit inside Docker Desktop</td></tr>
+<tr><td><b>🔧 Resolution</b></td><td>Replaced the unstable image with the production-stable build <code>campbellsoftwaresolutions/osticket</code> in the deployment config. All service dependencies initialized correctly and network routing succeeded on rebuild</td></tr>
 </table>
 
-> 💡 **Key Insight:** Containerized deployments require strict port management hygiene. Mapping alternative ingress ports (e.g., `8080`, `8000`) prevents conflicts with native OS processes while preserving internal container behavior.
+---
+
+### 🔬 Diagnostic Steps & Trial Matrix
+
+| Step | Action Taken | Outcome |
+|------|-------------|---------|
+| 1️⃣ | **Database Versioning** — switched MySQL version to isolate config handshake issues | ❌ Issue persisted |
+| 2️⃣ | **Environment Sanitization** — full stop/start cycles + purged local cache directories | ❌ Issue persisted |
+| 3️⃣ | **Security Constraints** — disabled legacy Docker security policies to force MySQL auth compatibility | ❌ Issue persisted |
+| 4️⃣ | **Log Analysis** — audited internal runtime logs via Docker Desktop | ✅ Root cause identified: unstable base image with silent service crashes |
+
+> 💡 **Key Insight:** In containerized orchestration, not all public images are built equal. When standard debugging (ports, versions, caches) fails, digging into live engine logs inside Docker Desktop is paramount — identifying a bad base image and pivoting to a community-verified stable build can be the decisive fix.
 
 ---
 
 ## 📸 Lab Evidence — Infrastructure Validation
 
-> Platform validation after custom port re-routing:
+> Docker Engine Status Log after migrating to the corrected image:
 
-![Successful container initialization showing operational web service traffic mapping](../images/docker_port_success.png)
-*📁 Fig. 1 — Docker engine container status log showing network traffic successfully routed via alternate host port mapping.*
+![Successful container initialization using campbellsoftwaresolutions image](../images/docker_success_log.png)
+*📁 Fig. 1 — Docker Desktop confirming successful runtime health status and active port mapping after stable image deployment.*
 
 ---
 
