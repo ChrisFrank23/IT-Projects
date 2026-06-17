@@ -86,7 +86,7 @@ The terminal capture below logs the environment instability and execution errors
 
 After identifying the limitations of the previous framework, the methodology was shifted to Hydra. The following screenshot captures the successful parallelized attack, accurately isolating and extracting the active credentials for the target domain user:
 
-<img width="1273" height="962" alt="Captura de tela 2026-06-15 102021" src="https://github.com/user-attachments/assets/2ebac9d1-9db5-4ada-9300-9312be30c05f" />
+<img width="1278" height="885" alt="Captura de tela 2026-06-15 100106" src="https://github.com/user-attachments/assets/1a295f63-200a-42e2-a782-6056d92a71e3" />
 
 
 
