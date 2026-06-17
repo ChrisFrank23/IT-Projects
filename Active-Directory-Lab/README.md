@@ -41,9 +41,8 @@ This project simulates an **Enterprise Domain Environment**. By deploying a full
 ---
 
 ## 🖼️ Architectural View
-*(Replace these links with your actual image paths)*
-![Topology](images/network_diagram.png)
-![ADUC View](images/aduc_structure.png)
+![Topology](images/<img width="509" height="713" alt="ActiveDirectoryServerDiagram" src="https://github.com/user-attachments/assets/6ad4e8de-e1cd-4331-8245-3023b3dff5e2" />
+)
 
 ---
 
