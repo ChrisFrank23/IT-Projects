@@ -39,10 +39,6 @@ This project focuses on simulating a real-world **IT Service Management (ITSM)**
 
 ---
 
-## 🖼️ Workflow Documentation
-
----
-
 ## 📌 Technical References
 * [ITIL Foundation: Incident Management Best Practices](https://www.axelos.com/certifications/itil-certifications)
 * [CompTIA A+ Troubleshooting Methodology](https://www.comptia.org)
