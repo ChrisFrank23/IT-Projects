@@ -6,7 +6,7 @@
 
 #### 📸 Submiting a new Ticket
 
-<img width="2559" height="1267" alt="Captura de tela 2026-06-15 090906" src="https://github.com/user-attachments/assets/03c7297d-604e-4b43-bec0-6526f84bbc44" />
+<img width="2557" height="1276" alt="Captura de tela 2026-06-14 221953" src="https://github.com/user-attachments/assets/1f9ab841-006e-45dd-a437-f9dc3872842d" />
 
 
 
