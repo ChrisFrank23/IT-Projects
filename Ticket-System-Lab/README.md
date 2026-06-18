@@ -33,7 +33,7 @@ This project focuses on simulating a real-world **IT Service Management (ITSM)**
 ## 🔍 Incident Log & Troubleshooting
 | Incident Type | Symptoms | Resolution |
 | :--- | :--- | :--- |
-| **Network** | Persistent Connection Refused Error & Docker Image Instability | Re-configured firewall rule and verified certificate status. |
+| **Network** | Persistent Connection Refused Error & Docker Image Instability | Log Analysis — audited internal runtime logs via Docker Desktop. |
 
 > **Pro-Tip:** The goal of an IT Support Specialist is to minimize downtime. Every incident resolved is an opportunity to improve the knowledge base and prevent future occurrences.
 
