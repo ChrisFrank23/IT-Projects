@@ -34,7 +34,6 @@ This project simulates an **Enterprise Domain Environment**. By deploying a full
 | Date | Issue | Resolution |
 | :--- | :--- | :--- |
 | 2026-06-15 | DNS Resolution Failure | Updated client TCP/IP settings to point to the DC IP. |
-| 2026-06-16 | GPO Policy Conflict | Used `gpupdate /force` and identified blocked inheritance settings. |
 
 > **Pro-Tip:** Documentation is as important as the deployment itself. Troubleshooting these errors provided a deeper understanding of how the network handshake functions under the hood.
 
