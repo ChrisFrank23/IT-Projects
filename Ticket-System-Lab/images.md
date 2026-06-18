@@ -1,6 +1,6 @@
 #### 📸 Getting into the Ticket System
 
-<img width="1267" height="717" alt="Captura de tela 2026-06-14 220551" src="https://github.com/user-attachments/assets/fde67951-9d02-4eba-b0e1-cbd7824392b2" />
+<img width="2559" height="1274" alt="Captura de tela 2026-06-14 221658" src="https://github.com/user-attachments/assets/64d35e18-c6e0-4a8b-a360-9ed3ba2c9ee3" />
 
 
 
