@@ -6,7 +6,7 @@
   <p>Welcome to my professional portfolio, featuring infrastructure labs, cybersecurity projects, and IT automation.</p>
 
   <p>
-    <a href="https://linkedin.com/in/cristhoferfrank"><img src="https://img.shields.io/badge/LinkedIn-Cristhofer_Frank-0A66C2?style=flat&logo=linkedin&logoColor=white"></a>
+    <a href="https://linkedin.com/in/cristhofer-daniel-frank"><img src="https://img.shields.io/badge/LinkedIn-Cristhofer_Frank-0A66C2?style=flat&logo=linkedin&logoColor=white"></a>
     <a href="mailto:cristhoferfrank140@gmail.com"><img src="https://img.shields.io/badge/Email-cristhoferfrank140@gmail.com-EA4335?style=flat&logo=gmail&logoColor=white"></a>
   </p>
 </div>
@@ -54,7 +54,7 @@ My goal is to document not just "how" to build systems, but the "why" behind the
 ---
 
 ### 📬 Contact
-Cristhofer Frank | [LinkedIn](https://linkedin.com/in/cristhoferfrank) | [Email](mailto:cristhoferfrank140@gmail.com)
+Cristhofer Frank | [LinkedIn](https://linkedin.com/in/cristhofer-daniel-frank) | [Email](mailto:cristhoferfrank140@gmail.com)
 
 <div align="center">
   <img src="https://komarev.com/ghpvc/?username=ChrisFrank23&label=Project%20Views&color=0e75b6&style=flat" alt="Views"/>
