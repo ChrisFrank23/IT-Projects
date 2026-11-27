@@ -16,6 +16,7 @@ This repository contains detailed documentation, configuration files, and troubl
 | :--- | :--- | :--- |
 | **[Active-Directory-Lab](Active-Directory-Lab/)** | Simulated corporate environment: AD DS, GPO, DNS, and User Lifecycle Management. | 🟢 Completed |
 | **[Ticket-System-Lab](Ticket-System-Lab/)** | ITSM workflow simulation, focusing on incident response and troubleshooting. | 🟢 Completed |
+| **[Hash-Identifier-Project](Hash-Identifier-Project/)** | Python CLI tool that identifies hash algorithms by prefix, length and charset — the first step in password auditing. | 🟢 Completed |
 
 ---
 
