@@ -1,45 +1,62 @@
 <div align="center">
   <img src="https://capsule-render.vercel.app/api?type=cylinder&color=auto&height=150&section=header&text=Ticket%20System%20Lab&fontSize=45&animation=fadeIn" width="100%"/>
-  
+
   <p><em>"Turning chaos into structured resolutions."</em></p>
 
   <p>
     <img src="https://img.shields.io/badge/Service_Desk-ITSM-FF7D00?style=flat&logo=reverbnation&logoColor=white">
+    <img src="https://img.shields.io/badge/Platform-osTicket-1E8BC3?style=flat">
+    <img src="https://img.shields.io/badge/Containers-Docker-2496ED?style=flat&logo=docker&logoColor=white">
     <img src="https://img.shields.io/badge/Troubleshooting-Root_Cause_Analysis-CC0000?style=flat&logo=search&logoColor=white">
-    <img src="https://img.shields.io/badge/Workflow-Automation-4CAF50?style=flat&logo=clickup&logoColor=white">
+  </p>
+
+  <p>
+    📸 <a href="images.md"><b>Screenshots</b></a> &nbsp;·&nbsp; 🛠️ <a href="labs.md"><b>Troubleshooting Log</b></a>
   </p>
 </div>
 
 ---
 
 ## 🎯 Project Overview
-This project focuses on simulating a real-world **IT Service Management (ITSM)** workflow. By deploying a ticketing system, I aimed to practice end-to-end incident lifecycle management—from initial user report to Root Cause Analysis (RCA) and final resolution. This lab bridges the gap between technical infrastructure skills and the "soft" skill of professional user support.
+This project simulates a real-world **IT Service Management (ITSM)** workflow. I deployed the **osTicket** help desk platform in **Docker** and used it to practice end-to-end incident lifecycle management — from the initial user report to Root Cause Analysis (RCA) and final resolution. The lab bridges technical infrastructure skills with the "soft" skill of professional user support.
 
 ## 🚀 Key Objectives
-*   **Workflow Simulation:** Manage the full lifecycle of an IT ticket (Open, In-Progress, Pending, Resolved).
+*   **Workflow Simulation:** Manage the full lifecycle of an IT ticket (Open → In-Progress → Pending → Resolved).
 *   **Incident Response:** Handle common corporate IT scenarios (VPN connectivity, Outlook sync errors, printer issues).
-*   **Documentation:** Maintain professional records of incidents to build a knowledge base (KB).
-*   **Root Cause Analysis (RCA):** Identify underlying issues instead of applying temporary "band-aid" fixes.
+*   **Documentation:** Keep professional records of incidents to build a knowledge base (KB).
+*   **Root Cause Analysis (RCA):** Find the underlying issue instead of applying temporary "band-aid" fixes.
+
+---
+
+## 🔄 Ticket Lifecycle
+```
+User submits ticket ──► Agent claims it ──► Investigation & fix ──► Closed with resolution summary
+```
+Each step is documented with screenshots in **[images.md](images.md)**.
 
 ---
 
 ## 🏗️ Implementation Highlights
-1.  **Environment Setup:** Deployed a ticketing platform in a controlled virtual environment.
-2.  **Scenario Creation:** Developed a catalog of "typical" user issues based on common Help Desk ticket trends.
-3.  **Documentation Standard:** Adopted a structured reporting format to ensure consistency and accountability in all resolutions.
+1.  **Environment Setup:** Deployed osTicket and its MySQL database as Docker containers on a Windows host (Docker Desktop).
+2.  **Scenario Creation:** Built a catalog of typical user issues based on common Help Desk ticket trends.
+3.  **Documentation Standard:** Adopted a structured reporting format to ensure consistency and accountability in every resolution.
 
 ---
 
 ## 🔍 Incident Log & Troubleshooting
-| Incident Type | Symptoms | Resolution |
-| :--- | :--- | :--- |
-| **Network** | Persistent Connection Refused Error & Docker Image Instability | Log Analysis — audited internal runtime logs via Docker Desktop. |
+Full write-up, diagnostic matrix and evidence in **[labs.md](labs.md)**.
 
-> **Pro-Tip:** The goal of an IT Support Specialist is to minimize downtime. Every incident resolved is an opportunity to improve the knowledge base and prevent future occurrences.
+| Incident | Symptom | Root Cause | Resolution |
+| :--- | :--- | :--- | :--- |
+| **Connection Refused** | osTicket web interface unreachable while containers appeared to run | Unstable Docker base image silently crashing internal services | Found via Docker Desktop logs; replaced with the stable `campbellsoftwaresolutions/osticket` image |
+
+> **Pro-Tip:** When the obvious fixes (ports, versions, caches) fail, read the logs. Three failed attempts came before the log audit that revealed the real cause.
 
 ---
 
 ## 📌 Technical References
+* [osTicket Documentation](https://docs.osticket.com)
+* [Docker Documentation](https://docs.docker.com)
 * [ITIL Foundation: Incident Management Best Practices](https://www.axelos.com/certifications/itil-certifications)
 * [CompTIA A+ Troubleshooting Methodology](https://www.comptia.org)
 

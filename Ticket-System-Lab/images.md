@@ -4,7 +4,7 @@
 
 
 
-#### 📸 Submiting a new Ticket
+#### 📸 Submitting a new Ticket
 
 <img width="2557" height="1276" alt="Captura de tela 2026-06-14 221953" src="https://github.com/user-attachments/assets/1f9ab841-006e-45dd-a437-f9dc3872842d" />
 
@@ -22,7 +22,7 @@
 
 
 
-#### 📸 After fixing the problem, closing the ticket and submiting a summary together
+#### 📸 After fixing the problem, closing the ticket and submitting a summary together
 
 <img width="2551" height="1269" alt="Captura de tela 2026-06-15 091000" src="https://github.com/user-attachments/assets/99622774-9419-458a-b5b9-4aeb1c8581fb" />
 
