@@ -49,13 +49,13 @@
 
 
 
-#### 📸 Changing IP Adresses from the machines to corrects IPs and DNSs
+#### 📸 Assigning the correct IP addresses and DNS servers to each machine
 
 <img width="1726" height="968" alt="Captura de tela 2026-06-17 095531" src="https://github.com/user-attachments/assets/2761167e-78a4-465f-9550-ba96a767b69a" />
 
 
 
-#### 📸 Installing Splunk Universal Forwader
+#### 📸 Installing Splunk Universal Forwarder
 
 <img width="1728" height="970" alt="Captura de tela 2026-06-17 095559" src="https://github.com/user-attachments/assets/6eb7d9d6-aafb-4840-9fb8-34bcfa49aed0" />
 

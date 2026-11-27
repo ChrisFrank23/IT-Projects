@@ -69,7 +69,7 @@ SYMPTOM: Crowbar → Execution errors + tool instability during brute-force simu
 <table>
 <tr><td><b>🔍 Symptom</b></td><td>Dictionary/brute-force attack against AD user <code>Chris Frank</code> using Crowbar resulted in repeated execution errors and tool instability</td></tr>
 <tr><td><b>🧪 Root Cause</b></td><td>Tool dependency issues and version instability in the Crowbar framework</td></tr>
-<tr><td><b>🔧 Resolution</b></td><td>Pivoted to <b>Hydra</b> — configured to target the service protocol with the specified username and wordlist. Successfully identified credentials (<code>Cris&230207</code>) and validated the brute-force attack vector</td></tr>
+<tr><td><b>🔧 Resolution</b></td><td>Pivoted to <b>Hydra</b> — configured to target the service protocol with the specified username and wordlist. Successfully recovered the test account credentials (redacted) and validated the brute-force attack vector</td></tr>
 </table>
 
 > 💡 **Key Insight:** Cyber defense requires adaptability. When an offensive tool fails, an operator must quickly pivot to alternative industry-standard frameworks to validate vulnerabilities without losing momentum.
